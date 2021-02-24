@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
+import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import com.sabina.navdemo.R
 
@@ -18,11 +20,13 @@ class MainFragment : Fragment() {
     private lateinit var button: Button
 
     private lateinit var viewModel: MainViewModel
+    private lateinit var userText: EditText
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         val view= inflater.inflate(R.layout.main_fragment, container, false)
         button = view.findViewById(R.id.button)
+        userText= view.findViewById(R.id.userText)
         return view
     }
 
@@ -32,8 +36,9 @@ class MainFragment : Fragment() {
 
 
         button.setOnClickListener {
+            val actionMainToSecond =  MainFragmentDirections.mainToSecond(userText.text.toString())
             // get a reference to the navigation controller and calls the navigate() method on it, arg- the resource ID of the navigation action
-            Navigation.findNavController(it).navigate( R.id.mainToSecond)
+            Navigation.findNavController(it).navigate( actionMainToSecond)
          }
 
 
