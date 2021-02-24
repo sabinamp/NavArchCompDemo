@@ -1,5 +1,6 @@
 package com.sabina.navdemo
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -55,5 +56,13 @@ class SecondFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    interface OnFragmentInteractionListener {
+
+        // TODO: Update argument type and name
+
+        fun onFragmentInteraction(uri: Uri)
+
     }
 }
