@@ -3,6 +3,8 @@ package com.sabina.navdemo
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import com.sabina.navdemo.ui.main.MainFragment
 
 class MainActivity : AppCompatActivity(), SecondFragment.OnFragmentInteractionListener  {
@@ -13,6 +15,30 @@ class MainActivity : AppCompatActivity(), SecondFragment.OnFragmentInteractionLi
 
     }
     override fun onFragmentInteraction(uri: Uri) {
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+
+        menuInflater.inflate(R.menu.options, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+
+            R.id.menu_red -> {
+                return true
+            }
+
+            R.id.menu_green -> {
+                return true
+            }
+
+            else -> return super.onOptionsItemSelected(item)
+
+        }
 
     }
 }
