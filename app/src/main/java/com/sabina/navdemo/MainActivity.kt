@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity(), SecondFragment.OnFragmentInteractionLi
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
 
-        menuInflater.inflate(R.menu.options, menu)
+        menuInflater.inflate(R.menu.group_menu, menu)
         return true
     }
 
@@ -29,10 +29,14 @@ class MainActivity : AppCompatActivity(), SecondFragment.OnFragmentInteractionLi
         when (item.itemId) {
 
             R.id.menu_red -> {
+                item.isChecked = !item.isChecked
                 return true
             }
 
             R.id.menu_green -> {
+
+                item.isChecked = !item.isChecked
+
                 return true
             }
 
