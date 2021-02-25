@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity(), SecondFragment.OnFragmentInteractionLi
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-
         menuInflater.inflate(R.menu.group_menu, menu)
         return true
     }
